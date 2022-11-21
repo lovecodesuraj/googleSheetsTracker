@@ -9,6 +9,8 @@ import passport from "passport";
 import session from "express-session";
 import  "./passport.js"
 
+var client={};
+
 const port=process.env.PORT||5000;
 
 connectToDb();
@@ -31,5 +33,8 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 app.use("/",postRoutes);
 app.use("/auth",authRoutes); 
+
+
+
 
 app.listen(port,()=>console.log(`server is running at port ${port}`));
